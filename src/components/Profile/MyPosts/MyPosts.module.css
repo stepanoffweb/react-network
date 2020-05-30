@@ -1,0 +1,6 @@
+.myPosts {
+    max-width: 500px;
+    padding: 0 10px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+}

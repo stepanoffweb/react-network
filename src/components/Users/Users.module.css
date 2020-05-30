@@ -1,0 +1,89 @@
+.userWrapper, .userInfo {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    /*justify-content: space-around;*/
+}
+.userWrapper {
+    margin: 10px 15px;
+}
+.userInfo {
+    justify-content: space-between;
+    width: 50%;
+    padding: 5px 15px;
+    border: 1px solid #565656;
+    border-radius: 5px;
+}
+.userAction {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center;
+    align-items: center;
+    margin-right: 10px;
+    border: 1px solid #565656;
+    border-radius: 5px;
+}
+.name, .location {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1em;
+}
+.location {
+    justify-content: space-around;
+}
+.status {
+    font-size: .75em;
+    color: rgba(0,0,0, .6);
+}
+.location span {
+    display: inline-block;
+    font-size: 1em;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+}
+.btn {
+    background-color: green;
+    color: white;
+}
+.btn[disabled] {
+    background-color: #000
+}
+.show {
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin: 25px auto;
+    background-color: purple;
+    color: white;
+}
+.pagination {
+    padding: 1px;
+    cursor: pointer;
+}
+.selected {
+    font-weight: bold;
+    font-size: 20px;
+}
