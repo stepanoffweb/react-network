@@ -2,29 +2,20 @@ import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import {Redirect} from 'react-router-dom'
 
-import {Input} from '../common/FormsControls/FormsControls.jsx'
+import {Input, createField} from '../common/FormsControls/FormsControls.jsx'
 import {required, maxLengthCreator} from '../../utils/validators/validators.js'
 import s from '../common/FormsControls/formControl.module.css'
 
-const maxLength10 = maxLengthCreator(18)
+const maxLength18 = maxLengthCreator(18)
 
-let LoginForm = (props) => {
-    const {handleSubmit} = props
+let LoginForm = ({handleSubmit, error}) => {
 
     return <form onSubmit={handleSubmit} >
-        <div>
-            <Field component={Input} type="text" placeholder="Login" name="login"
-            validate={[required, maxLength10]} />
-        </div>
-        <div>
-            <Field component={Input} type="text" placeholder="Password" name="password"
-            validate={[required, maxLength10]} />
-        </div>
-        <div>
-            <Field component="input" type="checkbox" name="rememberme" id="loginMemo" />
-            <label htmlFor="loginMemo">Remember me</label>
-        </div>
-        {props.error && <div className={s.formError} >{props.error}</div>}
+        {createField(Input, "text", "Login", "login", [required, maxLength18], false, null, null)}
+        {createField(Input, "text", "Password", "password", [required, maxLength18], false, null, null)}
+        {createField("input", "checkbox", null, "rememberme", [], true, "loginMemo", "loginMemo")}
+
+        {error && <div className={s.formError} >{error}</div>}
         <button>Login</button>
     </form>
 }
@@ -33,13 +24,13 @@ LoginForm =  reduxForm({
     form: 'loginForm'
 })(LoginForm)
 
-export default function Login(props) {
+export default function Login({isAuth, getAuthData}) {
      let mySubmit = (formData) => {
-        props.getAuthData(formData.login, formData.password, formData.loginMemo)
+        getAuthData(formData.login, formData.password, formData.loginMemo)
         for (let key in formData) {
             formData[key] = '' //для checked - приведение типов к false
         }
     }
-    if (props.isAuth) { return <Redirect to={'/profile'} />}
+    if (isAuth) { return <Redirect to={'/profile'} />}
     return  <LoginForm onSubmit={mySubmit} />
 }

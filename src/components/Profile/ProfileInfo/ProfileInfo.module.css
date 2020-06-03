@@ -6,6 +6,8 @@
     padding: 10px;
 }
 .contentHead img {
-    width: 50px;
+    width: 250px;
 }
-.descr {}
+.descr {
+    font-weight: bold;
+}

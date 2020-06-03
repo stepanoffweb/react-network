@@ -10,7 +10,7 @@ import authReducer from './auth-reducer'
 import appReducer from './app-reducer'
 
 let reducers = combineReducers({
-  profilePage: profileReducer, // ключ == ветка state!!!! в своем mapStateToProps = (state === state.branchName)
+  profilePage: profileReducer,
   messagePage: dialogsReducer,
   // sidebar: sidebarReducer,
   usersPage: usersReducer,
@@ -18,6 +18,7 @@ let reducers = combineReducers({
   app: appReducer,
   form: formReducer
 })
+
 let store = createStore(reducers, applyMiddleware(thunkMiddleware))
 window.store = store
 

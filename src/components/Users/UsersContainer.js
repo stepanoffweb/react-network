@@ -11,43 +11,30 @@ import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 
 class UsersContainer extends React.Component {
   // state = {{Follow, Unfollow, SetUsers, SetTotalCount, SetFetching, SetFollowingProgress, users }} // this.props - конструктор невидим, но он - есть!
-//   Follow: ƒ ()
-// SetCurrentPage: ƒ ()
-// SetFetching: ƒ ()
-// SetFollowingProgress: ƒ ()
-// SetTotalCount: ƒ ()
-// SetUsers: ƒ ()
-// Unfollow: ƒ ()
-// currentPage: 2
-// followingInProgress: false
-// isFetching: false
-// pageSize: 20
-// totalUsersCount: 0
-// users: []
   componentDidMount() {
-      this.props.getUsersData(this.props.currentPage, this.props.pageSize)
-}
+    this.props.getUsersData(this.props.currentPage, this.props.pageSize)
+  }
 
   handleClickPage = (pageNumber) => {
-      this.props.getUsersData(pageNumber, this.props.pageSize)
-}
+    this.props.getUsersData(pageNumber, this.props.pageSize)
+  }
 
   handleFollow = (id) => {
-      this.props.Follow(id)
-}
+    this.props.Follow(id)
+  }
 
   handleUnfollow = (id) => {
-      this.props.Unfollow(id)
-}
+    this.props.Unfollow(id)
+  }
 
-          render() {
+  render() {
 
-              return <>
-                  {this.props.isFetching ? <Preloader /> : null}
-                  <Users {...this.props}  handleUnfollow={this.handleUnfollow} handleFollow={this.handleFollow}
-                  handleClickPage={this.handleClickPage} />
-              </>
-          }
+    return <>
+      {this.props.isFetching ? <Preloader /> : null}
+      <Users {...this.props}  handleUnfollow={this.handleUnfollow} handleFollow={this.handleFollow}
+      handleClickPage={this.handleClickPage} />
+    </>
+  }
 }
 
 const mapStateToProps = (state) => ({     // console.log(state);// {profilePage: {…}, messagePage: {…}, usersPage: {…}}

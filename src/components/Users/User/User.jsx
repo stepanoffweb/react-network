@@ -3,7 +3,6 @@ import s from '../Users.module.css'
 import {NavLink} from 'react-router-dom'
 
 const User = ({userId, name, status, country, city, followed, pic, handleFollow, handleUnfollow, followingInProgress}) => {
-    // debugger
 
     return (
         <div className={s.userWrapper} data-id={userId} >

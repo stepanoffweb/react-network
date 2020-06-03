@@ -6,14 +6,16 @@ import style from './profile.module.css';
 
 
 export default function Profile(props) {
-    // console.log(props);
-    // debugger
 
     return (
         <>
           <div className={style.content}>
 
-            <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+            <ProfileInfo profile={props.profile}
+                         status={props.status}
+                         updateStatus={props.updateStatus}
+                         pushPhoto={props.pushPhoto}
+                         isOwner={props.isOwner} />
             <MyPostsContainer  />
           </div>
         </>
