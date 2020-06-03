@@ -19,6 +19,7 @@ The project is in constant enhancement now.
 	- разделы News/Music/Settings
 	- дополнение базового функционала плюшками (выбор количества юзеров на странице, кол-ва страниц в пагинации,...)
 <hr>
+
 - Для проверки работоспособности закрытых разделов:
 	- Email: free@samuraijs.com
 	- Password: free
