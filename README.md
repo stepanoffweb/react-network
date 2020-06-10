@@ -1,5 +1,5 @@
 # react-network
-The project is in constant enhancement now.
+The project is currently in active development.
 - развивающийся проект 
 - основная функциональность на данный момент: 
 	- валидация полей ввода на клиентской (required field, пустой ввод, максимальное количество знаков, ?тип password/email?)
